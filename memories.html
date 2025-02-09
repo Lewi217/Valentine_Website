@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memories</title>
+  <link rel="stylesheet" href="./Styles/memories.css" />
+</head>
+<body>
+  <header>
+    <h1 class="header_text">Our Beautiful Memories...😂ni vile hatujapigwa picha pamoja 😂😂</h1>
+  </header>
+  <main>
+    <section class="gallery">
+      <!-- Ensure these image files exist in your "images" folder -->
+      <img src="./images/dorcas1.jpeg" alt="Memory 1" />
+      <img src="./images/dorcas2.jpeg" alt="Memory 2" />
+      <img src="./images/dorcas3.jpeg" alt="Memory 3" />
+      <img src="./images/dorcas4.jpeg" alt="Memory 4" />
+      <img src="./images/dorcas5.jpeg" alt="Memory 5" />
+    </section>
+  </main>
+  <footer>
+    <p>Made with love by LEWI 💖</p>
+  </footer>
+
+  <!-- JavaScript for love heart animation on image click -->
+  <script>
+    // Attach a click event listener to each gallery image
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', function(event) {
+        // Get the click position relative to the viewport
+        const x = event.clientX;
+        const y = event.clientY;
+        
+        // Create a heart element
+        const heart = document.createElement('span');
+        heart.classList.add('love-heart');
+        heart.textContent = '❤️';
+        
+        // Position the heart near the click (offset a bit for centering)
+        heart.style.left = (x - 10) + 'px';
+        heart.style.top = (y - 10) + 'px';
+        
+        // Append the heart to the body
+        document.body.appendChild(heart);
+        
+        // Remove the heart element after the animation (1 second)
+        setTimeout(() => {
+          heart.remove();
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
